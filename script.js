@@ -1,9 +1,20 @@
-function decimalToBinary(decimal) {
-  let binary = "";
-  while (decimal > 0) {
-    binary = (decimal % 2) + binary;
-    decimal = Math.floor(decimal / 2);
-  }
-  return binary || "0";
-}
+function decimalToBinary(decimalNumber) {
+  // initialize variables
+  let binaryNumber = "";
+  let quotient = decimalNumber;
 
+  // perform division until quotient is zero
+  while (quotient !== 0) {
+    // calculate remainder
+    let remainder = quotient % 2;
+
+    // add remainder to binary number
+    binaryNumber = remainder.toString() + binaryNumber;
+
+    // divide quotient by 2
+    quotient = Math.floor(quotient / 2);
+  }
+
+  // return binary number as a string
+  return binaryNumber;
+}
